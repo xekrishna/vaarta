@@ -1,0 +1,189 @@
+
+
+.login {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .item{
+        position: absolute;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+        height: 100%;
+        width: 40%;
+        transition: all 0.6s ease;
+        background-color: rgb(18, 18, 18);
+        box-shadow: rgba(0, 0, 0, 0.107) 0px 15px 30px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px;
+
+        h2{
+            font-size: 50px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.914);
+        }
+
+        p{
+            font-size: 15px;
+            color: rgba(114, 114, 114, 0.596);
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 60%;
+
+            .inputGroup {
+                font-family: 'Segoe UI', sans-serif;
+                position: relative;
+                width: 100%;
+
+                input {
+                    font-size: 100%;
+                    padding: 0.8em;
+                    outline: none;
+                    border: 2px solid rgb(200, 200, 200);
+                    background-color: transparent;
+                    border-radius: 10px;
+                    width: 100%;
+
+                    &:focus::placeholder {
+                        color: transparent;
+                      }
+                }
+
+                label {
+                    font-size: 100%;
+                    position: absolute;
+                    top: 4px;
+                    left: 0;
+                    padding: 0.8em;
+                    margin-left: 0.5em;
+                    width: auto;
+                    pointer-events: none;
+                    transition: all 0.3s ease;
+                    color: rgb(100, 100, 100);
+                    opacity: 0;
+                }
+
+                input:focus~label {
+                    transform: translateY(-50%) scale(.9);
+                    top: 0;
+                    margin: 0em;
+                    margin-left: 1.3em;
+                    padding: 0.4em;
+                    background-color: rgb(18, 18, 18);
+                    opacity: 1;
+                }
+
+                input:focus {
+                    border-color: rgb(200, 150, 192);
+                  }
+            }
+
+            button{
+                padding: 16px 33px;
+                border-radius: 9px;
+                width: 100%;
+                background: #00000090;
+                font-size: 16px;
+                font-weight: 700;
+                border: none;
+                font-family: inherit;
+                text-align: center;
+                cursor: pointer;
+                transition: 0.4s;
+
+                &:hover {
+                    box-shadow: 7px 5px 56px -14px #3b0055;
+                   }
+
+                &:active {
+                    transform: scale(0.97);
+                    box-shadow: 7px 5px 56px -10px #52006d;
+                   }
+            }
+
+            label{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+
+                img{
+                    opacity: 0.5;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            .avatar-selector{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+            }
+            
+        }  
+        
+        a {
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            color: rgba(150, 150, 150, 0.596);
+            transition: all 0.3s ease;
+            border-bottom: rgba(150, 150, 150, 0.596) 2px solid;
+
+            &:hover {
+                color: rgb(200, 150, 192);
+                border-bottom: rgb(200, 150, 192) 2px solid;
+            }
+        }
+    }
+
+    .sign-in{
+        opacity: 1;
+        z-index: 5;
+    }
+
+    .sing-up{
+        opacity: 0;
+        z-index: 0;
+    }
+}
+
+
+
+.item.sign-in.active {
+    transform: translateY(0%);
+}
+
+.item.sign-in.inactive {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.item.sign-up.active {
+    transform: translateY(0%);
+}
+
+.item.sign-up.inactive {
+    transform: translateY(100%);
+    opacity: 0;
+}

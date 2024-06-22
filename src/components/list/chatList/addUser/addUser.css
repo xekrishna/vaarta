@@ -1,0 +1,92 @@
+
+.addUser{
+    position: absolute;
+    padding: 30px;
+    background-color: rgba(13, 13, 13, 0.951);
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    top: -64%;
+    left: 0;
+    bottom: 0;
+    right: 350px;
+    margin: auto;
+    width: max-content;
+    height: max-content;
+    z-index: 1000;
+
+    form{
+        display: flex;
+        gap: 20px;
+
+        input{
+            padding: 10px 20px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            background-color: rgb(18, 18, 18);
+            transition: all 0.3s ease;
+
+            &:focus{
+                background-color: rgba(0, 0, 0, 0.755);
+                transform: scale(0.97);
+                box-shadow: 7px 5px 56px -10px #52006d;
+            }
+
+            &:hover {
+                box-shadow: 7px 5px 56px -14px #3b0055;
+               }
+            
+        }
+
+        button{
+            padding: 10px 20px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.755);
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 7px 5px 56px -14px #3b0055;
+               }
+        }
+    }
+
+    .user{
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .detail{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: transparent;
+
+            img{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            
+        }
+
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 7px 5px 56px -14px #3b0055;
+               }
+        }
+    }
+}

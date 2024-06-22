@@ -1,0 +1,62 @@
+.userSettings{
+    position: absolute;
+    padding: 30px;
+    background-color: rgba(13, 13, 13, 0.951);
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 31%;
+    margin: auto auto 20px auto;
+    width: max-content;
+    height: max-content;
+    z-index: 1000;
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+
+        button{
+        padding: 10px 20px;
+        width: 200px;
+        font-size: 16px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 7px 5px 56px -14px #9333bc;
+           }
+
+        &:active{
+            box-shadow: 0 0 0 0 #9333bc;
+            transform: scale(0.95);
+            transition: all 0.3s ease;
+        }
+
+        
+    }
+    .logout{
+            background-color: rgba(255, 105, 105, 0.078);
+
+            &:hover {
+                box-shadow: 7px 5px 56px -14px #bc3333;
+               }
+    
+            &:active{
+                box-shadow: 0 0 0 0 #bc3333;
+                transform: scale(0.95);
+                transition: all 0.3s ease;
+            }
+        }
+}
+}

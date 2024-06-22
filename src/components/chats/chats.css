@@ -1,0 +1,245 @@
+@keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+  
+    to {
+      transform: translateY(-0.1em);
+    }
+}
+
+.chat{
+    flex: 4;
+    border-left: 1px solid rgb(52, 52, 52);
+    border-right: 1px solid rgb(52, 52, 52);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(52, 52, 52);
+        padding: 10px;
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .text {
+                flex-direction: column;
+                gap: 5px;
+
+                span{
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 15px;
+                    font-weight: 300;
+                    color: rgb(170, 170, 170);
+                }
+            }
+        }
+
+        .icons {
+            display: flex;
+            gap: 20px;
+
+            img {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .center {
+        padding: 20px;
+        flex: 1;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .message {
+            max-width: 70%;
+            display: flex;
+            gap: 20px;
+            width: max-content;
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .texts {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                img{
+                    width: 100%;
+                    height: 300px;
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+                
+                p{
+                    background-color: #0c0c0c30;
+                    border-radius: 10px;
+                    padding: 8px;
+                }
+
+                span{
+                    font-size: 12px;
+                    font-weight: 300;
+                    padding-left: 8px;
+                    color: rgb(170, 170, 170);
+                }
+                
+            }
+
+            &.own {
+                align-self: flex-end;
+
+                .texts {
+                    p {
+                        background-color: #0c0c0c9c;
+                        padding: 10px;
+                        border-radius: 10px;
+                    }
+                }
+
+                
+            }
+        }
+    }
+
+
+    .bottom{
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgb(52, 52, 52);
+        gap: 20px;
+        
+        .emoji{ 
+            position: relative;
+
+            .picker {
+                position: absolute;
+                bottom: 50px;
+                left: 0;
+            }
+
+            img{
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .icons{
+            display: flex;
+            gap: 15px;
+
+            img{
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+                filter: invert(100%);
+            }
+        }
+
+        input {
+            flex: 1;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        
+
+        .sendButton {
+            font-family: inherit;
+            font-size: 14px;
+            background: rgb(41, 41, 41);
+            color: white;
+            padding: 0.5em 0.9em;
+            padding-left: 0.6em;
+            display: flex;
+            align-items: center;
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.2s;
+            cursor: pointer;
+
+            span {
+                display: block;
+                margin-left: 0.3em;
+                transition: all 0.3s ease-in-out;
+            }
+
+            svg {
+                display: block;
+                transform-origin: center center;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            
+              
+        }
+
+        .sendButton:hover .svg-wrapper {
+            animation: fly-1 0.6s ease-in-out infinite alternate;
+        }
+          
+        .sendButton:hover svg {
+          transform: translateX(1.2em) rotate(45deg) scale(1.1);
+          }
+          
+        .sendButton:hover span {
+            transform: translateX(5em);
+        }
+          
+        .sendButton:active {
+            transform: scale(0.95);
+        }
+          
+        
+          
+    }
+
+}
+
+.center::-webkit-scrollbar{
+    width: 5px;
+}
+
+.center::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+.center::-webkit-scrollbar-thumb{
+    background: #0d0d0d69;
+    border-radius: 10px;
+}
