@@ -105,7 +105,7 @@ const AddUser = () => {
           <img src={user.avatar || './avatar.png'} alt='' />
           <span>{user.username}</span>
         </div>
-        <button onClick={handleAdd}>Add User</button>
+        <button onClick={handleAdd}>Add User</button>      
       </div>}
     </div>
   );

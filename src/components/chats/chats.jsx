@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import "./chats.css";
 import EmojiPicker from "emoji-picker-react";
+import { Theme } from 'emoji-picker-react';
 import { arrayUnion, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../../lib/firebase';
 import { useChatStore } from "../../lib/chatStore";
-import { useUserStore } from "../../lib/userStore";
+import { useUserStore } from '../../lib/userStore';
 import ImageModal from './imageModal/imageModal';
 import moment from 'moment';
 
@@ -22,6 +23,7 @@ const Chats = () => {
   const { currentUser } = useUserStore();
 
   const endRef = useRef(null);
+
 
   useEffect(() => {
     const unSub = chatId && onSnapshot(doc(db, "chats", chatId), (res) => {
@@ -175,7 +177,7 @@ const Chats = () => {
           <div className="emoji">
             <img src="./emoji.png" alt="Emoji Icon" onClick={() => setOpen(prev => !prev)} />
             <div className="picker">
-              <EmojiPicker open={open} onEmojiClick={handleEmoji} />
+              <EmojiPicker open={open} onEmojiClick={handleEmoji} theme="dark" emojiStyle="native"/>
             </div>
           </div>
           <input 
