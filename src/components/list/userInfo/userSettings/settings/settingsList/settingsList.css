@@ -1,0 +1,38 @@
+.settingsList{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    height: 80%;
+    padding: 0px;
+
+    .item{
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #121212;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-right: 10px;
+
+        &:hover{
+            background-color: #282828;
+        }
+
+        &:focus{
+            background-color: #272727;
+            padding-right: 0;
+            border-radius: 10px 0 0 10px;
+            margin-right: 0;
+            transform: scale(1.05);
+        }
+
+        p{
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+    }
+
+}

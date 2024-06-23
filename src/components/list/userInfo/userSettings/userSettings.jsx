@@ -1,19 +1,32 @@
 import { auth } from '../../../../lib/firebase'
 import './userSettings.css'
+import Settings from './settings/settings'
+import React, { useState } from 'react';
 
 const UserSettings = () => {
-  return (
-      <div className="userSettings">
-        <h1>User Settings</h1>
-        <div className="buttons">
-          <button>Change Password</button>
-          <button>Change Username</button>
-          <button>Change Theme</button>
-          <button className='logout' onClick={()=>auth.signOut()}>Log Out</button>
-        </div>
-        
-      </div>
-  )
-}
+  const [showSettings, setShowSettings] = useState(false)
 
-export default UserSettings
+  const handleSettingsClick = () => {
+    setShowSettings(true);
+  };
+
+  const handleBackClick = () => {
+    setShowSettings(false);
+  };
+
+  return (
+    <div className="userSettings">
+      {showSettings ? (
+        <Settings onBackClick={handleBackClick} />
+      ) : (
+        <div className="buttons">
+          <button>New group</button>
+          <button onClick={handleSettingsClick}>Settings</button>
+          <button className='logout' onClick={() => auth.signOut()}>Log Out</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default UserSettings;

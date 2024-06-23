@@ -1,0 +1,131 @@
+.settingsMain{
+    flex: 3;
+    background: linear-gradient(to right, #272727 10%, transparent 80%);
+    padding: 20px;
+    border-radius: 12px 0 0 12px;
+    
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        padding: 20px;
+        justify-content: space-between;
+
+        h3{
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0 0 12px;
+        }
+
+        form{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            align-items: center;
+
+            .container-profile{
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                gap: 12px;
+
+                .avatar{
+                    
+                    label{
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        gap: 20px;
+                        align-items: center;
+                    
+                        img{
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                .inputGroup {
+                    font-family: 'Segoe UI', sans-serif;
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    align-items: flex-start;
+
+                    input {
+                        font-size: 100%;
+                        padding: 0.8em;
+                        outline: none;
+                        border: 2px solid rgb(200, 200, 200);
+                        background-color: transparent;
+                        border-radius: 10px;
+                        width: 100%;
+                        
+
+                        &:focus::placeholder {
+                            color: transparent;
+                          }
+                    }
+
+                    input:focus {
+                        border-color: rgb(200, 150, 192);
+                    }
+
+                    .about{
+                        font-size: 100%;
+                        padding: 0.8em;
+                        outline: none;
+                        border: 2px solid rgb(200, 200, 200);
+                        background-color: transparent;
+                        border-radius: 10px;
+                        width: 100%;
+                        min-height: 100px;
+                        height: max-content;
+
+                        &:focus::placeholder {
+                            color: transparent;
+                          }
+
+                        &:focus {
+                            border-color: rgb(200, 150, 192);
+                        }
+                    }
+                }   
+            }
+
+            
+
+            button{
+                padding: 16px 33px;
+                border-radius: 9px;
+                margin-top: 30px;
+                width: 150px;
+                background: #101010;
+                font-size: 16px;
+                font-weight: 700;
+                border: none;
+                font-family: inherit;
+                text-align: center;
+                cursor: pointer;
+                transition: 0.4s;
+
+                &:hover {
+                    box-shadow: 7px 5px 56px -14px #3b0055;
+                   }
+
+                &:active {
+                    transform: scale(0.97);
+                    box-shadow: 7px 5px 56px -10px #52006d;
+                   }
+            }
+
+            
+        }
+    }
+}   
